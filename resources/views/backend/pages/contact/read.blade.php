@@ -141,7 +141,7 @@
                             <td>{{ $data->info }}</td>
                             <td>
                                 <a href="{{ route('contact.delete',$data->id) }}"
-                                    class="BtnDelete btn btn-danger animate__animated">Delete</a>
+                                    class="BtnDelete btn btn-danger animate__animated"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

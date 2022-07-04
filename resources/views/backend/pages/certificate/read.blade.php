@@ -142,9 +142,9 @@
                             <td></td>
                             <td>
                                 <a href="{{ route('certificate.destroy',$data->id) }}"
-                                    class="BtnDelete btn btn-danger animate__animated">Delete</a>
+                                    class="BtnDelete btn btn-danger animate__animated"><i class="fa-solid fa-trash"></i></a>
                                 <a href="{{ route('certificate.edit',$data->id) }}"
-                                    class="BtnEdit btn btn-info animate__animated">Edit</a>
+                                    class="BtnEdit btn btn-info animate__animated"><i class="fa-solid fa-pen"></i></a>
                             </td>
                         </tr>
                     @endforeach

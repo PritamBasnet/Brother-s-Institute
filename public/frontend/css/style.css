@@ -25,7 +25,16 @@ html {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-
+#PreLoader{
+    height: 100vh !important;
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+}
 h1 {
     color: var(--heading);
     font-size: 3rem;
