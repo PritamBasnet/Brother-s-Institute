@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\LatestController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\IncrementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,3 +77,9 @@ Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/brothers/admin/increment/create',[IncrementController::class,'create'])->name('incre.create');
+Route::get('/brothers/admin/increment/index',[IncrementController::class,'index'])->name('incre.index');
+Route::post('/brothers/admin/increment/store',[IncrementController::class,'store'])->name('incre.store');
+Route::get('/brothers/admin/increment/destroy/{id}',[IncrementController::class,'destroy'])->name('incre.delete');
+Route::get('/brothers/admin/increment/edit/{id}',[IncrementController::class,'edit'])->name('incre.edit');
+Route::post('/brothers/admin/increment/update/{id}',[IncrementController::class,'update'])->name('incre.update');

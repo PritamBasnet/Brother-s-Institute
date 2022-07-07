@@ -32,6 +32,14 @@
             background-color: #162581;
 
         }
+        .Robot__Pic
+        {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            object-position: center;
+            margin-left: 15px;
+        }
     </style>
 @endsection
 @section('f-content')
@@ -53,6 +61,7 @@
                         <div class="form-group" style="padding: 20px;">
                             <input type="checkbox" class="Human_check">
                             <span class="text text-info">I am not Robot</span>
+                            <img src="{{ asset('frontend/image/robot.png') }}" class="Robot__Pic" width="30%" alt="">
                         </div>
                         <div class="form-group" style="padding: 20px;">
                             <button class="Certificate-Btn" type="submit">Search</button>

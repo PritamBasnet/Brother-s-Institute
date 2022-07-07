@@ -1,5 +1,6 @@
 @extends('backend.layout.master')
 @section('b-style')
+    <link rel="stylesheet" href="{{ asset('backend/css/mobile.css') }}">
     <script defer src="{{ asset('backend/js/app.js') }}"></script>
     <style>
         .section-table {
@@ -107,6 +108,16 @@
     </style>
 @endsection
 @section('b-content')
+    @if (Session('update'))
+        <div class="success-wrapper">
+            <div class="wrapper-success">
+                <i class="fa-solid fa-circle-check" style="color:#0093E9 ;"></i>
+                <span class="Heading-Success">{{ Session('update') }}</span>
+            </div>
+            <span class="span-highligt" style="background-color: #0093E9;"></span>
+            <span class="bottom-hightlight"></span>
+        </div>
+    @endif
     @if (Session('delete'))
         <div class="success-wrapper">
             <div class="wrapper-success">
@@ -161,19 +172,23 @@
         };
         makingout();
         // For the edit and delete button
-        const BtnDelete = document.querySelector('.BtnDelete');
-        const BtnEdit = document.querySelector('.BtnEdit');
-        BtnDelete.addEventListener("mouseover", () => {
-            BtnDelete.classList.add('animate__rubberBand');
-        });
-        BtnDelete.addEventListener("mouseout", () => {
-            BtnDelete.classList.remove('animate__rubberBand');
-        });
-        BtnEdit.addEventListener("mouseover", () => {
-            BtnEdit.classList.add('animate__rubberBand');
-        });
-        BtnEdit.addEventListener("mouseout", () => {
-            BtnEdit.classList.remove('animate__rubberBand');
-        });
+        const BtnDelete = document.querySelectorAll('.BtnDelete');
+        const BtnEdit = document.querySelectorAll('.BtnEdit');
+        for (const button of BtnDelete) {
+            button.addEventListener("mouseover", () => {
+                button.classList.add('animate__rubberBand');
+            });
+            button.addEventListener("mouseout", () => {
+                button.classList.remove('animate__rubberBand');
+            });
+        }
+        for (const button of BtnEdit) {
+            button.addEventListener("mouseover", () => {
+                button.classList.add('animate__rubberBand');
+            });
+            button.addEventListener("mouseout", () => {
+                button.classList.remove('animate__rubberBand');
+            });
+        }
     </script>
 @endsection

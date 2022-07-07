@@ -23,7 +23,7 @@
         .input-br:focus~.br-label,
         .input-br:valid~.br-label {
             transform: translateY(-28px);
-            color: cornflowerblue;
+            color: var(--orange);
         }
 
         .br-label {
@@ -64,10 +64,11 @@
             border: none;
             border-radius: 4px;
             transition: 0.3s;
+            margin-top: 10px;
         }
 
         .contactForm-Btn:hover {
-            background-color: cornflowerblue;
+            background-color: #0f1f83;
         }
 
         .success-wrapper {
@@ -142,6 +143,42 @@
                 width: 100%;
             }
         }
+        .Description-Group{
+            width: 100%;
+            background-color: #eaebf4;
+            border: 1.5px solid var(--blue);
+            border-radius: 4px;
+            position: relative;
+        }
+        .input-br-des
+        {
+            position: relative;
+            width: 100%;
+            /* background: none; */
+            background-color: transparent;
+            border: none;
+            z-index: 2;
+
+        }
+        .Description-Label{
+            position: absolute;
+            left: 4px;
+            top: 10px;
+            font-size: 12px;
+            transition: 0.3s;
+            pointer-events: none;
+            /* z-index: 2; */
+            color: black;
+
+        }
+        .input-br-des:focus{
+            outline: none;
+        }
+        .input-br-des:focus~.Description-Label,
+        .input-br-des:valid~.Description-Label {
+            transform: translateY(-28px);
+            color: var(--orange);
+        }
     </style>
 @endsection
 {{-- end styling --}}
@@ -179,8 +216,11 @@
                             <input type="number" name="phone" class="input-br" required>
                             <label for="" class="br-label">Phone num</label>
                         </div>
-                        <textarea name="info" style="border: 1px solid blue;" width="440px" class="input-br" id="" cols="30"
+                        <div class="Description-Group">
+                            <textarea name="info" placeholder="" width="440px" class="input-br-des" id="" cols="30"
                             rows="10"></textarea>
+                            <label class="Description-Label">Description</label>
+                        </div>
                         {{-- <div class="br-form" style="height: 80px !important;" >
                             <input type="text" class="input-br" required>
                             <label for="" class="br-label">More info</label>

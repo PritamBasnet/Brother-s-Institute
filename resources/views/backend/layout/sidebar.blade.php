@@ -37,7 +37,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Courses:</h6>
-                        <a class="collapse-item" href="{{ route('course.create') }}">Upload</a>
+                        <a class="collapse-item" href="{{ route('course.create') }}">Add</a>
                         <a class="collapse-item" href="{{ route('courses.read') }}">View</a>
                     </div>
                 </div>
@@ -86,6 +86,20 @@
                         <h6 class="collapse-header">Custom Notice:</h6>
                         <a class="collapse-item" href="{{ route('latest.create') }}">Add</a>
                         <a class="collapse-item" href="{{ route('latest.index') }}">View</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
+                    aria-expanded="true" aria-controls="collapseSix">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Increment</span>
+                </a>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Increment:</h6>
+                        <a class="collapse-item" href="{{ route('incre.create') }}">Add</a>
+                        <a class="collapse-item" href="{{ route('incre.index') }}">View</a>
                     </div>
                 </div>
             </li>

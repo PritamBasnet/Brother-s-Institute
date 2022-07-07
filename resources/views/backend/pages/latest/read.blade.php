@@ -1,8 +1,12 @@
 @extends('backend.layout.master')
 @section('b-style')
+    <link rel="stylesheet" href="{{ asset('backend/css/mobile.css') }}">
     <script defer src="{{ asset('backend/js/app.js') }}"></script>
     <style>
+        body{
+        }
         .section-table {
+            overflow-x: scroll;
             width: 95%;
             height: fit-content;
             padding: 20px;
@@ -166,19 +170,23 @@
         };
         makingout();
         // For the edit and delete button
-        const BtnDelete = document.querySelector('.BtnDelete');
-        const BtnEdit = document.querySelector('.BtnEdit');
-        BtnDelete.addEventListener("mouseover", () => {
-            BtnDelete.classList.add('animate__rubberBand');
-        });
-        BtnDelete.addEventListener("mouseout", () => {
-            BtnDelete.classList.remove('animate__rubberBand');
-        });
-        BtnEdit.addEventListener("mouseover", () => {
-            BtnEdit.classList.add('animate__rubberBand');
-        });
-        BtnEdit.addEventListener("mouseout", () => {
-            BtnEdit.classList.remove('animate__rubberBand');
-        });
+        const BtnDelete = document.querySelectorAll('.BtnDelete');
+        const BtnEdit = document.querySelectorAll('.BtnEdit');
+        for (const button of BtnDelete) {
+            button.addEventListener("mouseover", () => {
+                button.classList.add('animate__rubberBand');
+            });
+            button.addEventListener("mouseout", () => {
+                button.classList.remove('animate__rubberBand');
+            });
+        }
+        for (const button of BtnEdit) {
+            button.addEventListener("mouseover", () => {
+                button.classList.add('animate__rubberBand');
+            });
+            button.addEventListener("mouseout", () => {
+                button.classList.remove('animate__rubberBand');
+            });
+        }
     </script>
 @endsection

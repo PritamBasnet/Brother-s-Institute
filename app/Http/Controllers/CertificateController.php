@@ -112,7 +112,7 @@ class CertificateController extends Controller
         $certificate->birth =  $request['birth'];
         $certificate->description = $request['description'];
         $certificate->update();
-        return redirect()->back()->with('update','Certificate Updated Successfully');
+        return redirect('/brothers/admin/certificate/index')->with('update','Certificate Updated Successfully');
 
     }
 

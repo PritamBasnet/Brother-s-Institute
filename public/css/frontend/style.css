@@ -9,6 +9,7 @@ html{
 .row {
     width: 100% !important;
     margin: 0 !important;
+    display: flex !important;
 }
 
 body {
@@ -30,6 +31,9 @@ a:hover {
 :root {
     --blue: #2b388f;
     --orange: #ef532c;
+}
+.row{
+    display: flex;
 }
 
 /* let stye the btrow first */
@@ -524,113 +528,6 @@ a:hover {
         flex-direction: column;
     }
 }
-
-
-
-/* Service Section */
-.grid{
-    display: grid;
-    row-gap: 20px;
-    gap: 20px;
-    width: 95%;
-    margin:auto;
-}
-.grid-three-columns {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.service-column {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 10px 15px;
-}
-
-.section-logo {
-    width: 30%;
-    padding: 15px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-title {
-    font-size: 16px;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.service-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.service-paragraph {
-    color: var(--para);
-    transition: 0.3s linear;
-    padding: 10px 0;
-}
-
-.service-paragraph:hover {
-    color: var(--helper);
-}
-
-.service {
-    height: 120px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: relative;
-}
-
-.service_box-highlight {
-    width: 3px;
-    height: 100%;
-    display: inline-block;
-    background-color: #ff006e;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: 0.8s ease-in-out;
-    z-index: -1;
-}
-
-.service-box-data {
-    height: 100%;
-    width: 100%;
-    margin: auto auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.i_pink {
-    color: #ff006e;
-    font-size: 22px;
-}
-
-.service-box-heading {
-    font-size: 17px;
-    font-weight: 500;
-}
-
-.service-box-subtitle {
-    font-size: 11px;
-    color: var(--para);
-    font-weight: 500;
-
-}
-
-.service:hover .service_box-highlight {
-    width: 100%;
-}
-
-.service:hover .color_white {
-    /* font-weight: 500; */
-    color: white !important;
-}
 .Moving-Top {
     height: 60px;
     width: 60px;
@@ -680,4 +577,10 @@ a:hover {
 .Latest-Item{
     padding: 10px 0;
     font-size: 14px;
+}
+.swiper-slide
+{
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
 }

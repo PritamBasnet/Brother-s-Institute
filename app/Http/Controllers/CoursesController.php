@@ -117,7 +117,7 @@ class CoursesController extends Controller
         $course->price = $request['price'];
         $course->editordata = $request['editordata'];
         $course->update();
-        return redirect()->back()->with('update','Course Updated Successfully');
+        return redirect('/brothers/admin/courses/read')->with('update','Course Updated Successfully');
     }
 
     /**

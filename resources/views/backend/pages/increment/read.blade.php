@@ -1,7 +1,6 @@
 @extends('backend.layout.master')
 @section('b-style')
-<link rel="stylesheet" href="{{ asset('backend/css/mobile.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('backend/css/mobile.css') }}">
     <script defer src="{{ asset('backend/js/app.js') }}"></script>
     <style>
         .section-table {
@@ -109,43 +108,68 @@
     </style>
 @endsection
 @section('b-content')
-    @if (Session('Delete'))
+    @if (Session('update'))
+        <div class="success-wrapper">
+            <div class="wrapper-success">
+                <i class="fa-solid fa-circle-check" style="color:#0093E9 ;"></i>
+                <span class="Heading-Success">{{ Session('update') }}</span>
+            </div>
+            <span class="span-highligt" style="background-color: #0093E9;"></span>
+            <span class="bottom-hightlight"></span>
+        </div>
+    @endif
+    @if (Session('delete'))
         <div class="success-wrapper">
             <div class="wrapper-success">
                 <i class="fa-solid fa-circle-check" style="color: red;"></i>
-                <span class="Heading-Success">{{ Session('Delete') }}</span>
+                <span class="Heading-Success">{{ Session('delete') }}</span>
             </div>
             <span class="span-highligt" style="background-color: red;"></span>
             <span class="bottom-hightlight"></span>
         </div>
     @endif
     <section class="section-table">
-        <h1 class="course-heading animate__animated animate__rubberBand">Contact Message</h1>
+        <h1 class="course-heading animate__animated animate__rubberBand">Course Table</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">info</th>
+                    <th scope="col">Section 1</th>
+                    <th scope="col">Section 2</th>
+                    <th scope="col">Section 3</th>
+                    <th scope="col">Section 4</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @isset($contact)
-                    @foreach ($contact as $data)
-                        <tr>
-                            <td>{{ $data->f_name }}</td>
-                            <td>{{ $data->l_name }}</td>
-                            <td>{{ $data->email }}</td>
-                            <td>{{ $data->phone }}</td>
-                            <td>{{ $data->info }}</td>
-                            <td>
-                                <a href="{{ route('contact.delete',$data->id) }}"
-                                    class="BtnDelete btn btn-danger animate__animated"><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
+                @isset($increment)
+                    @foreach ($increment as $data)
+                    <tr>
+                        <td>{{ $data->sec_1 }}
+                            <br>
+                            {{ $data->num_1 }}
+                        </td>
+                        <td>
+                            {{ $data->sec_2 }}
+                            <br>
+                            {{ $data->num_2 }}
+                        </td>
+                        <td>
+                            {{ $data->sec_3 }}
+                            <br>
+                            {{ $data->num_3 }}
+                        </td>
+                        <td>
+                            {{ $data->sec_4 }}
+                            <br>
+                            {{ $data->num_4 }}
+                        </td>
+                        <td>
+                            <a href="{{ route('incre.delete',$data->id) }}"
+                                class="BtnDelete btn btn-danger animate__animated"><i class="fa-solid fa-trash"></i></a>
+                            <a href="{{ route('incre.edit',$data->id) }}" class="BtnEdit btn btn-info animate__animated"><i
+                                    class="fa-solid fa-pen"></i></a>
+                        </td>
+                    </tr>
                     @endforeach
                 @endisset
             </tbody>
@@ -181,4 +205,3 @@
         }
     </script>
 @endsection
-
